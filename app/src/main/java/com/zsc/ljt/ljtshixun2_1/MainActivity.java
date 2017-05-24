@@ -40,16 +40,15 @@ public class MainActivity extends AppCompatActivity {
     TextView about;
 
     //切换背景图片的按钮
-    //LinearLayout mLinearLayout;
     CoordinatorLayout mCoordinatorLayout;
     static int[] bg_img = { R.drawable.bg1, R.drawable.bg2, R.drawable.bg3, R.drawable.bg4 };
-    static int bgflag = 1;
+    static int bgflag = 0;
 
 
     /**
      * 测试RecyclerView数据 Model
      */
-    public  Model[] models = { new Model(R.drawable.music_img, "Apple", "手嶌葵", "abc"),
+/*    public  Model[] models = { new Model(R.drawable.music_img, "Apple", "手嶌葵", "abc"),
             new Model(R.drawable.music_img, "Banana", "手嶌葵", "abc"),
             new Model(R.drawable.music_img, "Orange", "手嶌葵", "abc"),
             new Model(R.drawable.music_img, "Watermelon", "手嶌葵", "abc"),
@@ -60,14 +59,13 @@ public class MainActivity extends AppCompatActivity {
             new Model(R.drawable.music_img, "Cherry", "手嶌葵", "abc"),
             new Model(R.drawable.music_img, "Strawberry", "手嶌葵", "abc"),
             new Model(R.drawable.music_img, "Dgwgfs", "手嶌葵", "abc"),
-            new Model(R.drawable.music_img, "Pwegwe", "手嶌葵", "abc") };
+            new Model(R.drawable.music_img, "Pwegwe", "手嶌葵", "abc") }; */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //mLinearLayout = (LinearLayout) findViewById(R.id.ll);
         mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coorlayout);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -112,13 +110,13 @@ public class MainActivity extends AppCompatActivity {
         /**
          * 扫描手机内歌曲到List<>里
          */
-        //saomiao = new Saomiao();
-        //mModelList = saomiao.query(this);
+        saomiao = new Saomiao();
+        mModelList = saomiao.query(this);
 
         /**
          * 测试RecyclerView
          */
-        initMusic();
+        //initMusic();
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -138,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "你点击的是" + position, Toast.LENGTH_SHORT).show();
             }
         });
-/*
+
         about = (TextView) findViewById(R.id.about);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,9 +145,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        */
-    }
 
+    }
+/*
     private void initMusic() {
         mModelList.clear();
         for (int i = 0; i < 50; i++) {
@@ -158,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             mModelList.add(models[index]);
         }
     }
-
+*/
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
         return true;
