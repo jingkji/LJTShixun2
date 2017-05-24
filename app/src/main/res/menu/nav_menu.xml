@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_checkedIn"
+            android:title="签到" />
+        <item
+            android:id="@+id/nav_VIP"
+            android:title="会员中心" />
+        <item
+            android:id="@+id/nav_durClose"
+            android:title="定时关闭" />
+        <item
+            android:id="@+id/nav_clock"
+            android:title="音乐闹钟" />
+        <item
+            android:id="@+id/nav_help"
+            android:title="帮助与反馈" />
+
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/pic_03"
+            android:title="退出" />
+    </group>
+</menu>
